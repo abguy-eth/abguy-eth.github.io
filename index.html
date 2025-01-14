@@ -1,1 +1,124 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Windows-style Scrollbars</title>
+    <style>
+        /* Old Windows-style scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #dfdfdf;
+            border-left: 1px solid #c1c1c1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border: 1px solid #a9a9a9;
+            box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a9a9a9;
+        }
+
+        ::-webkit-scrollbar-button {
+            display: block;
+            height: 16px;
+            width: 16px;
+            background: #dfdfdf;
+            border: 1px solid #a9a9a9;
+            box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+        }
+
+        ::-webkit-scrollbar-button:hover {
+            background: #c1c1c1;
+        }
+
+        /* Old Windows-style button styling */
+        button {
+            background: #dfdfdf;
+            border: 2px solid;
+            border-color: #fff #808080 #808080 #fff;
+            box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+            padding: 8px 20px;
+            font-family: 'MS Sans Serif', sans-serif;
+            font-size: 16px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        button:active {
+            border-color: #808080 #fff #fff #808080;
+            box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff;
+            padding: 5px 9px 3px 11px;
+        }
+
+        button:focus {
+            outline: 1px dotted #000;
+            outline-offset: -4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add some content to make the scrollbar visible -->
+    <div style="height: 200vh; background: url('https://drive.google.com/uc?id=1kOSCtbMUKX5k3LdcHjz-9HHWerejmM0o/stars.gif'), url('https://drive.google.com/uc?id=1kOSCtbMUKX5k3LdcHjz-9HHWerejmM0o/flames.gif'), repeating-linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff 100px); animation: backgroundScroll 20s linear infinite;">
+                
+        <div style="position: relative; z-index: 1;">
+            <button target="_blank" onclick="window.location.href='https://dexscreener.com/'" style="animation: shake 0.5s infinite;">
+                <span style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; color: transparent;">Buy!</span>
+            </button>
+            
+            <button target="_blank" onclick="window.location.href='https://twitter.com/uncledonnie1969'" style="animation: rotate 3s linear infinite;">
+                <i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i>
+            </button>
+            
+            <button target="_blank" onclick="window.location.href='https://dexscreener.com/'" style="animation: bounce 1s infinite;">
+                <span style="background: linear-gradient(to right, #ff0000, #00ff00); -webkit-background-clip: text; color: transparent;">Chart!</span>
+            </button>
+        </div>
+        <marquee direction="down" behavior="alternate" style="height: 100%;">
+            <marquee behavior="alternate">
+                <h1 style="color: yellow; text-shadow: 2px 2px red, -2px -2px blue; font-family: 'Comic Sans MS'; animation: rainbow 1s linear infinite;">✨ UNCLE DONNIE! ✨</h1>
+            </marquee>
+        </marquee>
+        
+        <style>
+            @keyframes backgroundScroll {
+                from { background-position: 0 0; }
+                to { background-position: 100% 100%; }
+            }
+            
+            @keyframes rainbow {
+                0% { color: red; }
+                20% { color: yellow; }
+                40% { color: lime; }
+                60% { color: cyan; }
+                80% { color: magenta; }
+                100% { color: red; }
+            }
+            
+            @keyframes shake {
+                0% { transform: translate(1px, 1px) rotate(0deg); }
+                50% { transform: translate(-1px, -2px) rotate(-1deg); }
+                100% { transform: translate(1px, 1px) rotate(0deg); }
+            }
+            
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+        </style>
+    </div>
+</body>
+</html>
