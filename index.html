@@ -6,8 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="Assets/MoreImages/face.png">
 
-    <title>Windows-style Scrollbars</title>
+    <title>Uncle Donnie</title>
+
     <style>
+        * {
+            cursor: url('Assets/MoreImages/golden-pistol-smaller.png') 100 10, auto;
+        }
+
         /* Old Windows-style scrollbar styling */
         ::-webkit-scrollbar {
             width: 16px;
@@ -51,7 +56,6 @@
             font-family: 'MS Sans Serif', sans-serif;
             font-size: 16px;
             color: #000;
-            cursor: pointer;
         }
 
         button:active {
@@ -96,6 +100,53 @@
     </style>
 </head>
 <body>
+    <style>
+        .bullet {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff9900;
+            pointer-events: none;
+            z-index: 9999;
+            animation: bulletTravel 0.3s linear forwards;
+        }
+
+        @keyframes bulletTravel {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--targetX), var(--targetY)) scale(1);
+                opacity: 0.5;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('click', function(e) {
+            const bullet = document.createElement('div');
+            bullet.className = 'bullet';
+            
+            // Position bullet at cursor (gun) position
+            bullet.style.left = (e.pageX) + 'px'; // Start at gun position
+            bullet.style.top = (e.pageY + 10) + 'px';  // Start at gun position
+            
+            // Calculate direction vector to cursor position
+            // Calculate direction vector (not currently used)
+            
+            // Set the travel distance to cursor position
+            bullet.style.setProperty('--targetX', '1000px'); // Move bullet to cursor X
+            bullet.style.setProperty('--targetY', '0px'); // Move bullet to cursor Y
+            document.body.appendChild(bullet);
+            
+            // Remove bullet element after animation
+            setTimeout(() => {
+                bullet.remove();
+            }, 1_000);
+        });
+    </script>
     <div style="height: 100vh; background: url('Assets/MoreImages/EagleFlag.webp') repeat; background-size: 200px;">
     <div style="text-align: center; margin: 20px;">
         <h1 style="
@@ -122,24 +173,24 @@
     </div>
     <!-- Add some content to make the scrollbar visible -->
                 
-        <div style="position: relative; z-index: 1;">
-            <button target="_blank" onclick="window.location.href='https://dexscreener.com/'" style="animation: shake 0.5s infinite;">
+        <div style="position: relative; z-index: 1; text-align: center;">
+            <button onclick="window.open('https://dexscreener.com/', '_blank')" style="animation: shake 0.5s infinite;">
                 <span style="background: linear-gradient(to right, #cc0000, #cc7000, #cccc00, #007000, #000099, #4b0082, #8f00ff); -webkit-background-clip: text; color: transparent;">Buy!</span>
             </button>
             <button onclick="window.confirm('You gay or something?')" style="animation: rotate 0.7s infinite;">
                 <i class="fab fa-tiktok" style="color: #000000; font-size: 20px;"></i>
             </button>
             
-            <button target="_blank" onclick="window.location.href='https://twitter.com/uncledonnie1969'" style="animation: rotate 3s linear infinite;">
+            <button target="_blank" onclick="window.open('https://twitter.com/uncledonnie1969', '_blank')" style="animation: rotate 3s linear infinite;">
                 <i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i>
             </button>
             
-            <button target="_blank" onclick="window.location.href='https://dexscreener.com/'" style="animation: bounce 1s infinite;">
+            <button target="_blank" onclick="window.open('https://dexscreener.com/', '_blank')" style="animation: bounce 1s infinite;">
                 <span style="background: linear-gradient(to right, #cc0000, #00cc00); -webkit-background-clip: text; color: transparent;">Chart!</span>
             </button>
         </div>
         <!-- padding-top calculation is height / width (assuming 16:9 aspect ratio) -->
-<div style="position: relative; padding-top: 56.25%">
+<div style="margin-top: 100px; position: relative; padding-top: 56.25%">
     <iframe
       src="https://customer-avtvwwwf8bxrt2nw.cloudflarestream.com/7c42052ccca15d4f3c71891bcaf0796d/iframe"
       style="border: none; position: absolute; top: 0; height: 100%; width: 100%"
