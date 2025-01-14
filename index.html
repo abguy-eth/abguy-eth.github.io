@@ -126,28 +126,35 @@
     </style>
     <script>
         document.addEventListener('click', function(e) {
+            // Don't create bullet effect if click was on a button
+            if (e.target.closest('button')) {
+                return;
+            }
+
             const bullet = document.createElement('div');
             bullet.className = 'bullet';
             
             // Position bullet at cursor (gun) position
-            bullet.style.left = (e.pageX) + 'px'; // Start at gun position
-            bullet.style.top = (e.pageY + 10) + 'px';  // Start at gun position
+            bullet.style.left = (e.clientX + window.scrollX) + 'px'; // Account for scroll position
+            bullet.style.top = (e.clientY + window.scrollY + 10) + 'px';  // Account for scroll position
             
             // Calculate direction vector to cursor position
-            // Calculate direction vector (not currently used)
+            const targetX = 1000; // Distance to travel in X direction
+            const targetY = 0;    // Distance to travel in Y direction
             
-            // Set the travel distance to cursor position
-            bullet.style.setProperty('--targetX', '1000px'); // Move bullet to cursor X
-            bullet.style.setProperty('--targetY', '0px'); // Move bullet to cursor Y
+            // Set the travel distance
+            bullet.style.setProperty('--targetX', targetX + 'px');
+            bullet.style.setProperty('--targetY', targetY + 'px');
             document.body.appendChild(bullet);
             
             // Remove bullet element after animation
             setTimeout(() => {
                 bullet.remove();
-            }, 1_000);
+            }, 1000); // Removed underscore for consistency
         });
     </script>
-    <div style="height: 100vh; background: url('Assets/MoreImages/EagleFlag.webp') repeat; background-size: 200px;">
+    <div style="height: 200vh; background: url('Assets/MoreImages/EagleFlag.webp') repeat; background-size: 200px; max-width: 1200px; margin: 0 auto;">
+        <!-- LGBT Message -->
     <div style="text-align: center; margin: 20px;">
         <h1 style="
             font-family: 'Impact', fantasy;
@@ -171,8 +178,7 @@
             You mean liquor, guns, beer, and titties?
         </h1>
     </div>
-    <!-- Add some content to make the scrollbar visible -->
-                
+    <!-- Buttons -->     
         <div style="position: relative; z-index: 1; text-align: center;">
             <button onclick="window.open('https://dexscreener.com/', '_blank')" style="animation: shake 0.5s infinite;">
                 <span style="background: linear-gradient(to right, #cc0000, #cc7000, #cccc00, #007000, #000099, #4b0082, #8f00ff); -webkit-background-clip: text; color: transparent;">Buy!</span>
@@ -189,20 +195,69 @@
                 <span style="background: linear-gradient(to right, #cc0000, #00cc00); -webkit-background-clip: text; color: transparent;">Chart!</span>
             </button>
         </div>
-        <!-- padding-top calculation is height / width (assuming 16:9 aspect ratio) -->
-<div style="margin-top: 100px; position: relative; padding-top: 56.25%">
-    <iframe
-      src="https://customer-avtvwwwf8bxrt2nw.cloudflarestream.com/7c42052ccca15d4f3c71891bcaf0796d/iframe"
-      style="border: none; position: absolute; top: 0; height: 100%; width: 100%"
-      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-      allowfullscreen="true"
-    ></iframe>
-  </div>
-        <marquee direction="down" behavior="alternate" style="height: 100%;">
+        <marquee direction="down" behavior="alternate">
             <marquee behavior="alternate">
                 <h1 style="color: yellow; text-shadow: 2px 2px red, -2px -2px blue; font-family: 'Comic Sans MS'; animation: rainbow 1s linear infinite;">✨ UNCLE DONNIE! ✨</h1>
             </marquee>
-        </marquee>
+        </marquee> 
+        <!-- padding-top calculation is height / width (assuming 16:9 aspect ratio) -->
+         <!-- Video -->
+        <div style="margin: 100px auto 0; position: relative; padding-top: 56.25%; max-width: 800px;">
+            <iframe
+            src="https://customer-avtvwwwf8bxrt2nw.cloudflarestream.com/7c42052ccca15d4f3c71891bcaf0796d/iframe"
+            style="border: none; position: absolute; top: 0; height: 100%; width: 100%"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowfullscreen="true"
+            ></iframe>
+        </div>
+        <div style="position: relative; width: 100%; height: 100vh; margin: 5vh auto; max-width: 90vw; overflow: hidden; background: url('Assets/Website Assets/medieval-map.jpg') center/contain no-repeat;">
+            <!-- Roads -->
+            <!-- <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <path d="M250,200 L490,400 L800,150 L985,450" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M250,200 L490,400 L800,150 L985,450" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                <path d="M160,550 L405,700 L690,650 L945,750" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M160,550 L405,700 L690,650 L945,750" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                <path d="M490,400 L405,700" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M490,400 L405,700" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                <path d="M800,150 L690,650" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M800,150 L690,650" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+            </svg> -->
+            
+            <!-- Images -->
+            <img src="Assets/Website Assets/Ballmart.png" alt="Ballmart" style="position: absolute; width: 17%; top: 50%; left: 40%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white; transform: rotate(-4deg);" onclick="showVideo('7c42052ccca15d4f3c71891bcaf0796d')">
+            <div style="position: absolute; top: 50%; left: 41%; z-index: 3; transform: rotate(-4deg);">
+                <p style="font-family: 'Comic Sans MS', cursive; font-size: 1.5em; color: #333; text-shadow: 1px 1px 0 white; margin: 0;">SUPPLIES</p>
+            </div>
+            <img src="Assets/Website Assets/Excon Gas Station.png" alt="Gas Station" style="position: absolute; width: 13%; top: 38%; left: 22%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;">
+            <img src="Assets/Website Assets/Gunshop.png" alt="Gunshop" style="position: absolute; width: 20%; top: 35%; left: 80%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white; transform: rotate(3deg);">
+            <div style="position: absolute; top: 35%; left: 81%; z-index: 3; transform: rotate(3deg);">
+                <p style="font-family: 'Comic Sans MS', cursive; font-size: 1.5em; color: #333; text-shadow: 1px 1px 0 white; margin: 0;">ARMORY</p>
+            </div>
+            <img src="Assets/Website Assets/House.png" alt="House" style="position: absolute; width: 14%; top: 45%; left: 67%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white; transform: rotate(5deg);">
+            <img src="Assets/Website Assets/Lake Mountain.png" alt="Lake Mountain" style="position: absolute; width: 18%; top: 65%; left: 80%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;">
+            <!-- <img src="Assets/Website Assets/Shooting Range.png" alt="Shooting Range" style="position: absolute; width: 22%; top: 34%; left: 34%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;"> -->
+            <!-- <img src="Assets/Website Assets/Nascar Speedway Stadium.png" alt="Speedway" style="position: absolute; width: 35%; top: 65%; left: 60.5%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;"> -->
+        </div>
+
     </div>
+    <!-- Video popup container -->
+    <div id="videoPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000;">
+        <div style="position: relative; width: 80%; max-width: 800px; margin: 50px auto;">
+            <button onclick="closeVideo()" style="position: absolute; right: -40px; top: -40px; background: none; border: none; color: white; font-size: 24px; cursor: pointer;">×</button>
+            <iframe id="videoIframe" src="" style="width: 100%; height: 450px; border: none;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function showVideo(videoId) {
+            document.getElementById('videoPopup').style.display = 'block';
+            document.getElementById('videoIframe').src = `https://customer-avtvwwwf8bxrt2nw.cloudflarestream.com/${videoId}/iframe`;
+        }
+
+        function closeVideo() {
+            document.getElementById('videoPopup').style.display = 'none';
+            document.getElementById('videoIframe').src = '';
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="Assets/MoreImages/face.png">
+
+    <title>Uncle Donnie</title>
+
+    <style>
+        * {
+            cursor: url('Assets/MoreImages/golden-pistol-smaller.png') 100 10, auto;
+        }
+
+        /* Old Windows-style scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #dfdfdf;
+            border-left: 1px solid #c1c1c1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border: 1px solid #a9a9a9;
+            box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a9a9a9;
+        }
+
+        ::-webkit-scrollbar-button {
+            display: block;
+            height: 16px;
+            width: 16px;
+            background: #dfdfdf;
+            border: 1px solid #a9a9a9;
+            box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+        }
+
+        ::-webkit-scrollbar-button:hover {
+            background: #c1c1c1;
+        }
+
+        /* Old Windows-style button styling */
+        button {
+            background: #dfdfdf;
+            border: 2px solid;
+            border-color: #fff #808080 #808080 #fff;
+            box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+            padding: 8px 20px;
+            font-family: 'MS Sans Serif', sans-serif;
+            font-size: 16px;
+            color: #000;
+        }
+
+        button:active {
+            border-color: #808080 #fff #fff #808080;
+            box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff;
+            padding: 5px 9px 3px 11px;
+        }
+
+        button:focus {
+            outline: 1px dotted #000;
+            outline-offset: -4px;
+        }
+            @keyframes backgroundScroll {
+                from { background-position: 0 0; }
+                to { background-position: 100% 100%; }
+            }
+            
+            @keyframes rainbow {
+                0% { color: red; }
+                20% { color: yellow; }
+                40% { color: lime; }
+                60% { color: cyan; }
+                80% { color: magenta; }
+                100% { color: red; }
+            }
+            
+            @keyframes shake {
+                0% { transform: translate(1px, 1px) rotate(0deg); }
+                50% { transform: translate(-1px, -2px) rotate(-1deg); }
+                100% { transform: translate(1px, 1px) rotate(0deg); }
+            }
+            
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+    </style>
+</head>
+<body>
+    <style>
+        .bullet {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff9900;
+            pointer-events: none;
+            z-index: 9999;
+            animation: bulletTravel 0.3s linear forwards;
+        }
+
+        @keyframes bulletTravel {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--targetX), var(--targetY)) scale(1);
+                opacity: 0.5;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('click', function(e) {
+            // Don't create bullet effect if click was on a button
+            if (e.target.closest('button')) {
+                return;
+            }
+
+            const bullet = document.createElement('div');
+            bullet.className = 'bullet';
+            
+            // Position bullet at cursor (gun) position
+            bullet.style.left = (e.clientX + window.scrollX) + 'px'; // Account for scroll position
+            bullet.style.top = (e.clientY + window.scrollY + 10) + 'px';  // Account for scroll position
+            
+            // Calculate direction vector to cursor position
+            const targetX = 1000; // Distance to travel in X direction
+            const targetY = 0;    // Distance to travel in Y direction
+            
+            // Set the travel distance
+            bullet.style.setProperty('--targetX', targetX + 'px');
+            bullet.style.setProperty('--targetY', targetY + 'px');
+            document.body.appendChild(bullet);
+            
+            // Remove bullet element after animation
+            setTimeout(() => {
+                bullet.remove();
+            }, 1000); // Removed underscore for consistency
+        });
+    </script>
+    <div style="height: 200vh; background: url('Assets/MoreImages/EagleFlag.webp') repeat; background-size: 200px; max-width: 1200px; margin: 0 auto;">
+        <!-- LGBT Message -->
+    <div style="text-align: center; margin: 20px;">
+        <h1 style="
+            font-family: 'Impact', fantasy;
+            font-size: 48px;
+            background: linear-gradient(45deg, #ff0000, #ffd700, #00ff00, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 
+                3px 3px 0 #000,
+                -3px -3px 0 #000,
+                3px -3px 0 #000,
+                -3px 3px 0 #000,
+                0 0 10px rgba(255,255,255,0.8);
+            transform: perspective(500px) rotateX(20deg);
+            animation: rainbow 3s linear infinite;
+            letter-spacing: 2px;
+            padding: 20px;
+        ">
+            LGBT?<br>
+            You mean liquor, guns, beer, and titties?
+        </h1>
+    </div>
+    <!-- Buttons -->     
+        <div style="position: relative; z-index: 1; text-align: center;">
+            <button onclick="window.open('https://dexscreener.com/', '_blank')" style="animation: shake 0.5s infinite;">
+                <span style="background: linear-gradient(to right, #cc0000, #cc7000, #cccc00, #007000, #000099, #4b0082, #8f00ff); -webkit-background-clip: text; color: transparent;">Buy!</span>
+            </button>
+            <button onclick="window.confirm('You gay or something?')" style="animation: rotate 0.7s infinite;">
+                <i class="fab fa-tiktok" style="color: #000000; font-size: 20px;"></i>
+            </button>
+            
+            <button target="_blank" onclick="window.open('https://twitter.com/uncledonnie1969', '_blank')" style="animation: rotate 3s linear infinite;">
+                <i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i>
+            </button>
+            
+            <button target="_blank" onclick="window.open('https://dexscreener.com/', '_blank')" style="animation: bounce 1s infinite;">
+                <span style="background: linear-gradient(to right, #cc0000, #00cc00); -webkit-background-clip: text; color: transparent;">Chart!</span>
+            </button>
+        </div>
+        <marquee direction="down" behavior="alternate">
+            <marquee behavior="alternate">
+                <h1 style="color: yellow; text-shadow: 2px 2px red, -2px -2px blue; font-family: 'Comic Sans MS'; animation: rainbow 1s linear infinite;">✨ UNCLE DONNIE! ✨</h1>
+            </marquee>
+        </marquee> 
+        <!-- padding-top calculation is height / width (assuming 16:9 aspect ratio) -->
+         <!-- Video -->
+        <div style="margin: 100px auto 0; position: relative; padding-top: 56.25%; max-width: 800px;">
+            <iframe
+            src="https://customer-avtvwwwf8bxrt2nw.cloudflarestream.com/7c42052ccca15d4f3c71891bcaf0796d/iframe"
+            style="border: none; position: absolute; top: 0; height: 100%; width: 100%"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowfullscreen="true"
+            ></iframe>
+        </div>
+        <div style="position: relative; width: 100%; height: 100vh; margin: 5vh auto; max-width: 90vw; overflow: hidden; background: url('Assets/Website Assets/Map.png') center/contain no-repeat;">
+            <!-- Roads -->
+            <!-- <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <path d="M250,200 L490,400 L800,150 L985,450" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M250,200 L490,400 L800,150 L985,450" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                <path d="M160,550 L405,700 L690,650 L945,750" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M160,550 L405,700 L690,650 L945,750" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                <path d="M490,400 L405,700" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M490,400 L405,700" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                <path d="M800,150 L690,650" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                <path d="M800,150 L690,650" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+            </svg> -->
+            
+            <!-- Images -->
+            <img src="Assets/Website Assets/Ballmart.png" alt="Ballmart" style="position: absolute; width: 20%; top: 37%; left: 80%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border-radius: 10px;">
+            <img src="Assets/Website Assets/Excon Gas Station.png" alt="Gas Station" style="position: absolute; width: 15%; top: 60%; left: 8%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border-radius: 10px;">
+            <img src="Assets/Website Assets/Gunshop.png" alt="Gunshop" style="position: absolute; width: 20%; top: 18%; left: 5%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border-radius: 10px;">
+            <img src="Assets/Website Assets/House.png" alt="House" style="position: absolute; width: 14%; top: 63%; left: 34%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border-radius: 10px;">
+            <img src="Assets/Website Assets/Lake Mountain.png" alt="Lake Mountain" style="position: absolute; width: 18%; top: 19%; left: 85%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border-radius: 10px;">
+            <img src="Assets/Website Assets/Shooting Range.png" alt="Shooting Range" style="position: absolute; width: 22%; top: 34%; left: 34%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border-radius: 10px;">
+            <img src="Assets/Website Assets/Nascar Speedway Stadium.png" alt="Speedway" style="position: absolute; width: 35%; top: 65%; left: 60.5%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border-radius: 10px;">
+        </div>
+
+    </div>
+</body>
+</html>
