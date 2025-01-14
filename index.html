@@ -130,8 +130,8 @@
             bullet.className = 'bullet';
             
             // Position bullet at cursor (gun) position
-            bullet.style.left = (e.clientX + window.scrollX) + 'px'; // Account for scroll position
-            bullet.style.top = (e.clientY + window.scrollY + 10) + 'px';  // Account for scroll position
+            bullet.style.left = (e.clientX) + 'px'; // Account for scroll position
+            bullet.style.top = (e.clientY + 10) + 'px';  // Account for scroll position
             
             // Calculate direction vector to cursor position
             const targetX = 1000; // Distance to travel in X direction
