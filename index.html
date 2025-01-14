@@ -96,7 +96,7 @@
     </style>
 </head>
 <body>
-    <div style="height: 200vh; background: url('Assets/MoreImages/EagleFlag.webp') repeat; background-size: 200px;">
+    <div style="height: 100vh; background: url('Assets/MoreImages/EagleFlag.webp') repeat; background-size: 200px;">
     <div style="text-align: center; margin: 20px;">
         <h1 style="
             font-family: 'Impact', fantasy;
@@ -138,20 +138,20 @@
                 <span style="background: linear-gradient(to right, #cc0000, #00cc00); -webkit-background-clip: text; color: transparent;">Chart!</span>
             </button>
         </div>
-        <div style="display: flex; justify-content: center; padding: 20px;">
-            <video width="640" height="480" autoplay loop controls style="border: 3px solid #fff; box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff;">
-                <source src="Assets/Video With Sound/Donnie at Ballmart.MOV" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <!-- padding-top calculation is height / width (assuming 16:9 aspect ratio) -->
+<div style="position: relative; padding-top: 56.25%">
+    <iframe
+      src="https://customer-avtvwwwf8bxrt2nw.cloudflarestream.com/7c42052ccca15d4f3c71891bcaf0796d/iframe"
+      style="border: none; position: absolute; top: 0; height: 100%; width: 100%"
+      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+      allowfullscreen="true"
+    ></iframe>
+  </div>
         <marquee direction="down" behavior="alternate" style="height: 100%;">
             <marquee behavior="alternate">
                 <h1 style="color: yellow; text-shadow: 2px 2px red, -2px -2px blue; font-family: 'Comic Sans MS'; animation: rainbow 1s linear infinite;">✨ UNCLE DONNIE! ✨</h1>
             </marquee>
         </marquee>
-        <div class="image-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px;">
-            <img src="Assets/Images/MidJourney_RAW/Donnie as a fisher.png" style="width: 100%; height: auto; border: 3px solid #fff; box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #fff;">
-        </div>
     </div>
 </body>
 </html>
