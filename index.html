@@ -126,11 +126,6 @@
     </style>
     <script>
         document.addEventListener('click', function(e) {
-            // Don't create bullet effect if click was on a button
-            if (e.target.closest('button')) {
-                return;
-            }
-
             const bullet = document.createElement('div');
             bullet.className = 'bullet';
             
@@ -151,7 +146,7 @@
             setTimeout(() => {
                 bullet.remove();
             }, 1000); // Removed underscore for consistency
-        });
+        }, false);
     </script>
     <div style="height: 200vh; background: url('Assets/MoreImages/EagleFlag.webp') repeat; background-size: 200px; max-width: 1200px; margin: 0 auto;">
         <!-- LGBT Message -->
@@ -180,20 +175,37 @@
     </div>
     <!-- Buttons -->     
         <div style="position: relative; z-index: 1; text-align: center;">
-            <button onclick="window.open('https://dexscreener.com/', '_blank')" style="animation: shake 0.5s infinite;">
+            <button id="buyButton" style="animation: shake 0.5s infinite;">
                 <span style="background: linear-gradient(to right, #cc0000, #cc7000, #cccc00, #007000, #000099, #4b0082, #8f00ff); -webkit-background-clip: text; color: transparent;">Buy!</span>
             </button>
-            <button onclick="window.confirm('You gay or something?')" style="animation: rotate 0.7s infinite;">
+            <button id="tiktokButton" style="animation: rotate 0.7s infinite;">
                 <i class="fab fa-tiktok" style="color: #000000; font-size: 20px;"></i>
             </button>
             
-            <button target="_blank" onclick="window.open('https://twitter.com/uncledonnie1969', '_blank')" style="animation: rotate 3s linear infinite;">
+            <button id="twitterButton" style="animation: rotate 3s linear infinite;">
                 <i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i>
             </button>
             
-            <button target="_blank" onclick="window.open('https://dexscreener.com/', '_blank')" style="animation: bounce 1s infinite;">
+            <button id="chartButton" style="animation: bounce 1s infinite;">
                 <span style="background: linear-gradient(to right, #cc0000, #00cc00); -webkit-background-clip: text; color: transparent;">Chart!</span>
             </button>
+            <script>
+                document.getElementById('buyButton').addEventListener('click', () => {
+                    window.open('https://dexscreener.com/', '_blank');
+                });
+                
+                document.getElementById('tiktokButton').addEventListener('click', () => {
+                    window.confirm('You gay or something?');
+                });
+                
+                document.getElementById('twitterButton').addEventListener('click', () => {
+                    window.open('https://twitter.com/uncledonnie1969', '_blank');
+                });
+                
+                document.getElementById('chartButton').addEventListener('click', () => {
+                    window.open('https://dexscreener.com/', '_blank');
+                });
+            </script>
         </div>
         <marquee direction="down" behavior="alternate">
             <marquee behavior="alternate">
