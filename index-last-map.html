@@ -159,11 +159,11 @@
             <marquee behavior="alternate">
                 <h1 style="color: yellow; text-shadow: 2px 2px red, -2px -2px blue; font-family: 'Comic Sans MS'; animation: rainbow 1s linear infinite;">✨ UNCLE DONNIE! ✨</h1>
             </marquee>
-        </marquee>
+        </marquee> 
         
         <!-- padding-top calculation is height / width (assuming 16:9 aspect ratio) -->
         <!-- Video -->
-        <div style="margin: 20px auto 0; position: relative; padding-top: 56.25%; max-width: 800px;">
+        <div style="margin: 100px auto 0; position: relative; padding-top: 56.25%; max-width: 800px;">
             <iframe
                 src="https://customer-avtvwwwf8bxrt2nw.cloudflarestream.com/7c42052ccca15d4f3c71891bcaf0796d/iframe"
                 style="border: none; position: absolute; top: 0; height: 100%; width: 100%"
@@ -171,76 +171,73 @@
                 allowfullscreen="true"
             ></iframe>
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
-            <div style="flex: 1; min-width: 300px;">
-                <!-- Buttons -->     
-                <div style="width: 100%; position: relative; z-index: 1; text-align: center;">
-                    <button id="buyButton" style="animation: shake 0.5s infinite;">
-                        <span style="background: linear-gradient(to right, #cc0000, #cc7000, #cccc00, #007000, #000099, #4b0082, #8f00ff); -webkit-background-clip: text; color: transparent;">Buy!</span>
-                    </button>
-                    <button id="tiktokButton" style="animation: rotate 0.7s infinite;">
-                        <i class="fab fa-tiktok" style="color: #000000; font-size: 20px;"></i>
-                    </button>
-                    
-                    <button id="twitterButton" style="animation: rotate 3s linear infinite;">
-                        <i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i>
-                    </button>
-                    
-                    <button id="chartButton" style="animation: bounce 1s infinite;">
-                        <span style="background: linear-gradient(to right, #cc0000, #00cc00); -webkit-background-clip: text; color: transparent;">Chart!</span>
-                    </button>
-                    <script>
-                        document.getElementById('buyButton').addEventListener('click', () => {
-                            window.open('https://dexscreener.com/', '_blank');
-                        });
-                        
-                        document.getElementById('tiktokButton').addEventListener('click', () => {
-                            window.confirm('You gay or something?');
-                        });
-                        
-                        document.getElementById('twitterButton').addEventListener('click', () => {
-                            window.open('https://twitter.com/uncledonnie1969', '_blank');
-                        });
-                        
-                        document.getElementById('chartButton').addEventListener('click', () => {
-                            window.open('https://dexscreener.com/', '_blank');
-                        });
-                    </script>
-                </div>
+        <div style="display: flex; justify-content: center; gap: 2rem; align-items: flex-start;">
 
-                <!-- LGBT Message -->
-                <div style="text-align: center; margin: 20px;">
-                    <h1 style="
-                        font-family: 'Impact', fantasy;
-                        font-size: 48px;
-                        background: linear-gradient(45deg, #ff0000, #ffd700, #00ff00, #00ffff, #ff00ff);
-                        -webkit-background-clip: text;
-                        background-clip: text;
-                        color: transparent;
-                        text-shadow: 
-                            3px 3px 0 #000,
-                            -3px -3px 0 #000,
-                            3px -3px 0 #000,
-                            -3px 3px 0 #000,
-                            0 0 10px rgba(255,255,255,0.8);
-                        transform: perspective(500px) rotateX(20deg);
-                        animation: rainbow 3s linear infinite;
-                        letter-spacing: 2px;
-                        padding: 20px;
-                    ">
-                        LGBT?<br>
-                        You mean liquor, guns, beer, and titties?
-                    </h1>
-                </div>
+            <div style="position: relative; width: 100%; height: 100vh; margin: 5vh auto; max-width: 90vw; overflow: hidden; background: url('Assets/Website Assets/medieval-map.jpg') center/contain no-repeat;">
+                <!-- Roads -->
+                <!-- <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                    <path d="M250,200 L490,400 L800,150 L985,450" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                    <path d="M250,200 L490,400 L800,150 L985,450" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                    <path d="M160,550 L405,700 L690,650 L945,750" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                    <path d="M160,550 L405,700 L690,650 L945,750" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                    <path d="M490,400 L405,700" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                    <path d="M490,400 L405,700" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                    <path d="M800,150 L690,650" style="stroke: #666; stroke-width: 20px; fill: none;"/>
+                    <path d="M800,150 L690,650" style="stroke: white; stroke-width: 2px; stroke-dasharray: 10,10; fill: none;"/>
+                </svg> -->
+                
+                <!-- Images -->
+                <img src="Assets/Website Assets/Ballmart.png" alt="Ballmart" style="position: absolute; width: 17%; top: 50%; left: 40%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white; transform: rotate(-4deg);" onclick="showVideo('7c42052ccca15d4f3c71891bcaf0796d')">
+                <img src="Assets/Website Assets/Excon Gas Station.png" alt="Gas Station" style="position: absolute; width: 13%; top: 38%; left: 22%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;">
+                <img src="Assets/Website Assets/Gunshop.png" alt="Gunshop" style="position: absolute; width: 20%; top: 35%; left: 80%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white; transform: rotate(3deg);">
+                <img src="Assets/Website Assets/House.png" alt="House" style="position: absolute; width: 14%; top: 45%; left: 67%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white; transform: rotate(5deg);">
+                <img src="Assets/Website Assets/Lake Mountain.png" alt="Lake Mountain" style="position: absolute; width: 18%; top: 65%; left: 80%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;">
+                <!-- <img src="Assets/Website Assets/Shooting Range.png" alt="Shooting Range" style="position: absolute; width: 22%; top: 34%; left: 34%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;"> -->
+                <!-- <img src="Assets/Website Assets/Nascar Speedway Stadium.png" alt="Speedway" style="position: absolute; width: 35%; top: 65%; left: 60.5%; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 2; border: 2px solid white;"> -->
+            </div>
+            <!-- Buttons -->     
+            <div style="width: 100%; position: relative; z-index: 1; text-align: center;">
+                <button id="buyButton" style="animation: shake 0.5s infinite;">
+                    <span style="background: linear-gradient(to right, #cc0000, #cc7000, #cccc00, #007000, #000099, #4b0082, #8f00ff); -webkit-background-clip: text; color: transparent;">Buy!</span>
+                </button>
+                <button id="tiktokButton" style="animation: rotate 0.7s infinite;">
+                    <i class="fab fa-tiktok" style="color: #000000; font-size: 20px;"></i>
+                </button>
+                
+                <button id="twitterButton" style="animation: rotate 3s linear infinite;">
+                    <i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i>
+                </button>
+                
+                <button id="chartButton" style="animation: bounce 1s infinite;">
+                    <span style="background: linear-gradient(to right, #cc0000, #00cc00); -webkit-background-clip: text; color: transparent;">Chart!</span>
+                </button>
+                <script>
+                    document.getElementById('buyButton').addEventListener('click', () => {
+                        window.open('https://dexscreener.com/', '_blank');
+                    });
+                    
+                    document.getElementById('tiktokButton').addEventListener('click', () => {
+                        window.confirm('You gay or something?');
+                    });
+                    
+                    document.getElementById('twitterButton').addEventListener('click', () => {
+                        window.open('https://twitter.com/uncledonnie1969', '_blank');
+                    });
+                    
+                    document.getElementById('chartButton').addEventListener('click', () => {
+                        window.open('https://dexscreener.com/', '_blank');
+                    });
+                </script>
             </div>
 
-            <!-- Wiki -->
             <div style="
-                flex: 0 1 300px;
+                width: 300px;
                 border: 4px ridge #c0c0c0; 
                 background-color: #f0f0ff;
                 padding: 0.2em;
-                margin: 0;
+                float: right;
+                clear: right;
+                margin: 0.5em 0 1em 1em;
                 font-size: 88%;
                 line-height: 1.5em;
                 font-family: 'Comic Sans MS', cursive;
@@ -248,9 +245,6 @@
                 <div style="text-align: center; padding: 0.5em; background: #002868;">
                     <div style="font-size: 125%; line-height: 1.2em; font-weight: bold; color: white; text-shadow: 2px 2px #000000;">Uncle Donnie</div>
                     <div style="font-style: italic; color: #bf0a30;">The People's Patriot</div>
-                </div>
-                <div style="text-align: center; margin: 10px;">
-                    <img src="Assets/Website Assets/DonnieGuns.jpg" alt="Uncle Donnie with guns" style="max-width: 100%; height: auto; border: 3px solid #002868; box-shadow: 3px 3px 5px rgba(0,0,0,0.5);">
                 </div>
 
                 <table style="width: 100%; border-collapse: separate; border-spacing: 2px;">
@@ -341,7 +335,30 @@
     </script>
 
     </div>
-    
+    <!-- LGBT Message -->
+    <div style="text-align: center; margin: 20px;">
+        <h1 style="
+            font-family: 'Impact', fantasy;
+            font-size: 48px;
+            background: linear-gradient(45deg, #ff0000, #ffd700, #00ff00, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 
+                3px 3px 0 #000,
+                -3px -3px 0 #000,
+                3px -3px 0 #000,
+                -3px 3px 0 #000,
+                0 0 10px rgba(255,255,255,0.8);
+            transform: perspective(500px) rotateX(20deg);
+            animation: rainbow 3s linear infinite;
+            letter-spacing: 2px;
+            padding: 20px;
+        ">
+            LGBT?<br>
+            You mean liquor, guns, beer, and titties?
+        </h1>
+    </div>
     </div>
 </body>
 </html>
