@@ -15,7 +15,7 @@
 
     <style>
         * {
-            cursor: url('Assets/MoreImages/golden-pistol-smaller.png') 100 10, auto;
+            cursor: url('Assets/MoreImages/golden-pistol-smaller.png') 20 20, auto;
         }
 
         /* Old Windows-style scrollbar styling */
@@ -181,6 +181,9 @@
                     <button id="buyButton" style="animation: shake 0.5s infinite;">
                         <span style="background: linear-gradient(to right, #cc0000, #cc7000, #cccc00, #007000, #000099, #4b0082, #8f00ff); -webkit-background-clip: text; color: transparent;">Buy!</span>
                     </button>
+                    <button id="telegramButton" style="animation: rotate 2s linear infinite;">
+                        <i class="fab fa-telegram" style="color: #0088cc; font-size: 20px;"></i>
+                    </button>
                     <button id="tiktokButton" style="animation: rotate 0.7s infinite;">
                         <i class="fab fa-tiktok" style="color: #000000; font-size: 20px;"></i>
                     </button>
@@ -207,6 +210,10 @@
                         
                         document.getElementById('chartButton').addEventListener('click', () => {
                             window.open('https://dexscreener.com/', '_blank');
+                        });
+
+                        document.getElementById('telegramButton').addEventListener('click', () => {
+                            // window.open('https://t.me/uncledonnie1969', '_blank');
                         });
                     </script>
                 </div>
@@ -239,7 +246,7 @@
 
             <!-- Wiki -->
             <div style="
-                flex: 0 1 300px;
+                flex: 0 0 300px;
                 border: 4px ridge #c0c0c0; 
                 background-color: #f0f0ff;
                 padding: 0.2em;
